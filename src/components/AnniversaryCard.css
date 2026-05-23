@@ -1,0 +1,111 @@
+.anniversary-card {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff 0%, #fff5f7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.anniversary-card::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 182, 193, 0.1);
+  border-radius: 50%;
+}
+
+.anniversary-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.anniversary-heart {
+  font-size: 20px;
+  animation: floatHeart 2s ease-in-out infinite;
+}
+
+.anniversary-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pink-deep);
+}
+
+.anniversary-countdown {
+  margin: 8px 0;
+}
+
+.countdown-label {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.countdown-days {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.countdown-number {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #FF69B4, #FF85A2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.countdown-unit {
+  font-size: 18px;
+  color: var(--pink-deep);
+  font-weight: 600;
+}
+
+.anniversary-progress {
+  margin-top: 12px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--pink-light);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FFB6C1, #FF69B4);
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+.progress-text {
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+.anniversary-empty {
+  padding: 16px;
+  text-align: center;
+}
+
+.anniversary-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.anniversary-hint {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 4px;
+}

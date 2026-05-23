@@ -1,0 +1,196 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #FFF0F5 0%, #FFF5F7 50%, #FFF0F5 100%);
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px 16px;
+  padding-bottom: 90px;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page {
+  animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === 卡片通用样式 === */
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  border: 2px solid rgba(255, 182, 193, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:active {
+  transform: scale(0.985);
+}
+
+/* === 按钮通用样式 === */
+.btn {
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.45);
+}
+
+.btn:active {
+  transform: scale(0.94);
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+}
+
+.btn-small {
+  padding: 8px 18px;
+  font-size: 13px;
+  border-radius: 20px;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--pink-deep);
+  border: 2px solid var(--pink);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--pink-light);
+}
+
+/* === 页面标题 === */
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--pink-deep);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* === 标签/徽章 === */
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #FFB6C1, #FF85A2);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* === 爱心装饰 === */
+.heart-deco {
+  color: var(--pink-deep);
+  font-size: 14px;
+}
+
+/* === 心跳动画 === */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+  60% { transform: scale(1); }
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* === 按钮涟漪效果 === */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+.btn:hover::after {
+  transform: translateX(100%);
+}
+
+/* === 卡片光晕 === */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,182,193,0.06) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* === 摇晃动画 === */
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.wobble:hover {
+  animation: wobble 0.4s ease;
+}
+
+/* === 弹跳动画 === */
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.bounce-in {
+  animation: bounceIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

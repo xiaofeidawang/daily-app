@@ -1,0 +1,78 @@
+:root {
+  --pink-light: #FFF0F5;
+  --pink: #FFB6C1;
+  --pink-deep: #FF69B4;
+  --pink-coral: #FF85A2;
+  --white: #FFFFFF;
+  --text: #5D4E5F;
+  --text-light: #9B8EA0;
+  --shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+  --shadow-strong: 0 6px 24px rgba(255, 105, 180, 0.2);
+
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--pink-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: var(--pink-light);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 10px;
+}
+
+/* 选中文字颜色 */
+::selection {
+  background: var(--pink);
+  color: white;
+}
+
+/* 输入框通用样式 */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text);
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  border-radius: 14px;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  background: var(--white);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--pink-deep);
+}
